@@ -13,10 +13,10 @@ body {
 input {
   outline: none;
   width: 40vw;
-  height: 55px;
+  height: 2.1em;
   color: white;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 30px;
   padding: 0px 20px;
   line-height: normal;
   border-top: none;
@@ -26,7 +26,7 @@ input {
   background-color: #27cece;
   border-bottom: 3px solid white;
 }
-button {
+.todoBtn {
   height: 60px;
   width: 100px;
   background-color: #fa53a0;
@@ -40,12 +40,26 @@ button {
 ul {
   padding: 0;
   margin-top: 5vh;
-  width: 56vw;
+  width: 44vw;
+
   text-align: center;
+}
+.listContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 li {
   list-style: none;
   font-weight: bold;
-  padding-bottom: 20px;
+  font-size: 3vw;
+}
+.delBtn {
+  width: 30px;
+  height: 30px;
+  background-color: #fa53a0;
+  color: white;
+  outline: 0;
+  border: 0;
 }
