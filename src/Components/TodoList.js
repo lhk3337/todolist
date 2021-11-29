@@ -1,20 +1,19 @@
 import React from "react";
 
-const TodoList = ({ todos }) => {
-  console.log(todos);
-  const delBtn = () => {
-    console.log("Delete now");
+const TodoList = ({ todos, setTodos }) => {
+  const delBtn = (id) => {
+    setTodos(todos.filter((task) => task.id !== id));
   };
   return (
     <>
       <ul>
         {todos
           .filter((itemfilter) => itemfilter !== "")
-          .map((item, index) => (
+          .map((item) => (
             <div className="listContainer">
-              <li key={index}>{item}</li>
+              <li key={item.id}>{item.data}</li>
               <span>
-                <button className="delBtn" onClick={delBtn}>
+                <button className="delBtn" onClick={() => delBtn(item.id)}>
                   ✖︎
                 </button>
               </span>

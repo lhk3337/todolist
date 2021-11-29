@@ -2,23 +2,29 @@ import React, { useState, useRef, useEffect } from "react";
 const Todo = ({ setTodos, todos }) => {
   const [input, setInput] = useState("");
   const inputRef = useRef(null);
-
+  const inputRefFocus = () => {
+    inputRef.current.focus();
+  };
   const onChange = (e) => {
     const { value } = e.target;
     setInput(value);
   };
   const onClickBtn = () => {
-    setTodos([...todos, input]);
-
+    if (!input) {
+      inputRefFocus();
+      return;
+    }
+    const id = Math.floor(Math.random() * 10000) + 1;
+    setTodos([...todos, { id, data: input }]);
     setInput("");
-    inputRef.current.focus();
+    inputRefFocus();
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
   };
   useEffect(() => {
-    inputRef.current.focus();
+    inputRefFocus();
   }, []);
 
   return (
