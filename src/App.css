@@ -55,11 +55,22 @@ li {
   font-weight: bold;
   font-size: 3vw;
 }
-.delBtn {
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 4em;
+}
+.btn {
   width: 30px;
   height: 30px;
   background-color: #fa53a0;
   color: white;
   outline: 0;
   border: 0;
+}
+.complete {
+  text-decoration-style: solid;
+  text-decoration-line: line-through;
+  text-decoration-color: #ff6c6c;
+  opacity: 0.6;
 }
