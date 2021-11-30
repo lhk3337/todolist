@@ -30,7 +30,7 @@ const Todo = ({ setTodos, todos }) => {
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <input value={input} onChange={onChange} ref={inputRef} />
+        <input value={input} onChange={onChange} ref={inputRef} placeholder="할 일을 입력해 주세요..." />
         <button type="submit" className="todoBtn" onClick={onClickBtn}>
           할일 추가
         </button>
