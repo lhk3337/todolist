@@ -10,7 +10,7 @@ body {
   font-size: calc(10px + 2vmin);
   color: #f71d83;
 }
-input {
+.todoinput {
   outline: none;
   width: 40vw;
   height: 2.1em;
@@ -39,21 +39,32 @@ input {
 
 ul {
   padding: 0;
-  margin-top: 5vh;
+  margin-top: 10vh;
   width: 44vw;
 
   text-align: center;
 }
 .listContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
 li {
   list-style: none;
+}
+
+.listInput {
+  list-style: none;
   font-weight: bold;
   font-size: 3vw;
+  color: #f71d83;
+  border: none;
+  outline: none;
+  text-align: center;
+  padding: 0;
+  background-color: transparent;
+  border-bottom: 3px solid white;
 }
 .btnContainer {
   display: flex;
@@ -71,6 +82,16 @@ li {
 .complete {
   text-decoration-style: solid;
   text-decoration-line: line-through;
-  text-decoration-color: #ff6c6c;
-  opacity: 0.6;
+  text-decoration-color: #f71d83;
+}
+.listText {
+  font-size: 3vw;
+  width: 579px;
+  color: #f71d83;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0;
+  white-space: nowrap;
 }
