@@ -5,7 +5,7 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 const TodoList = ({ todos, setTodos }) => {
   const editInputRef = useRef(null);
 
-  const inputBlankCheck = (id) => {
+  const editInputItem = (id) => {
     setTodos(
       todos.map((item) => {
         if (item.id === id) {
@@ -38,7 +38,7 @@ const TodoList = ({ todos, setTodos }) => {
     todos.map((item) => {
       // console.log(item.isComplete);
       if (!item.isComplete) {
-        inputBlankCheck(id);
+        editInputItem(id);
       }
       return item;
     });
@@ -57,7 +57,7 @@ const TodoList = ({ todos, setTodos }) => {
 
   const pressEnterKey = (event, id) => {
     if (event.charCode === 13) {
-      inputBlankCheck(id);
+      editInputItem(id);
     }
   };
 
