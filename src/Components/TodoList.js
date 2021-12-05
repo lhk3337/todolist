@@ -5,7 +5,7 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 const TodoList = ({ todos, setTodos }) => {
   const editInputRef = useRef(null);
 
-  const editInputItem = (id) => {
+  const isEdit = (id) => {
     setTodos(
       todos.map((item) => {
         if (item.id === id) {
@@ -35,13 +35,7 @@ const TodoList = ({ todos, setTodos }) => {
   };
 
   const editBtn = (id) => {
-    todos.map((item) => {
-      // console.log(item.isComplete);
-      if (!item.isComplete) {
-        editInputItem(id);
-      }
-      return item;
-    });
+    isEdit(id);
   };
 
   const onChange = (event, id) => {
@@ -57,7 +51,7 @@ const TodoList = ({ todos, setTodos }) => {
 
   const pressEnterKey = (event, id) => {
     if (event.charCode === 13) {
-      editInputItem(id);
+      isEdit(id);
     }
   };
 
@@ -70,7 +64,7 @@ const TodoList = ({ todos, setTodos }) => {
             <li>
               {item.isEdit ? (
                 <input
-                  className="listInput"
+                  className={`listInput ${item.isComplete ? "complete" : ""}`}
                   type="text"
                   defaultValue={item.data}
                   onKeyPress={(event) => pressEnterKey(event, item.id)}
