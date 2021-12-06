@@ -76,7 +76,7 @@ const TodoList = ({ todos, setTodos }) => {
               />
               {item.isEdit ? (
                 <input
-                  className={`listInput ${item.isComplete ? "complete" : ""}`}
+                  className={`listInput ${item.isComplete ? "" : "complete"}`}
                   type="text"
                   defaultValue={item.data}
                   onKeyPress={(event) => pressEnterKey(event, item.id)}
@@ -85,26 +85,19 @@ const TodoList = ({ todos, setTodos }) => {
                   onChange={(event) => onChange(event, item.id)}
                 />
               ) : (
-                <div className={`listText ${item.isComplete ? "complete" : ""}`}>{item.data}</div>
+                <div className={`listText ${item.isComplete ? "" : "complete"}`}>{item.data}</div>
               )}
             </li>
-
-            {item.isComplete ? (
-              <div className="btnContainer">
-                <button className="listBtn" onClick={() => delBtn(item.id)}>
-                  <DeleteForeverIcon />
-                </button>
-              </div>
-            ) : (
-              <div className="btnContainer">
-                <button className="listBtn" onClick={() => delBtn(item.id)}>
-                  <DeleteForeverIcon />
-                </button>
+            <div className="btnContainer">
+              <button className="listBtn" onClick={() => delBtn(item.id)}>
+                <DeleteForeverIcon />
+              </button>
+              {item.isComplete ? (
                 <button className="listBtn addBtn" onClick={() => editBtn(item.id)}>
                   <RateReviewIcon />
                 </button>
-              </div>
-            )}
+              ) : null}
+            </div>
           </div>
         ))}
     </ul>
