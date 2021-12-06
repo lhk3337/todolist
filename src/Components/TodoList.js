@@ -1,5 +1,9 @@
 import React, { useRef } from "react";
-import CheckBoxSharpIcon from "@mui/icons-material/CheckBoxSharp";
+
+import Checkbox from "@mui/material/Checkbox";
+import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 const TodoList = ({ todos, setTodos }) => {
@@ -62,6 +66,14 @@ const TodoList = ({ todos, setTodos }) => {
         .map((item) => (
           <div key={item.id} className="listContainer">
             <li>
+              <Checkbox
+                style={{
+                  color: "#f71d83",
+                }}
+                icon={<CircleOutlinedIcon />}
+                checkedIcon={<CheckCircleIcon />}
+                onClick={() => completeBtn(item.id)}
+              />
               {item.isEdit ? (
                 <input
                   className={`listInput ${item.isComplete ? "complete" : ""}`}
@@ -77,17 +89,22 @@ const TodoList = ({ todos, setTodos }) => {
               )}
             </li>
 
-            <div className="btnContainer">
-              <button className="btn" onClick={() => completeBtn(item.id)}>
-                <CheckBoxSharpIcon />
-              </button>
-              <button className="btn" onClick={() => delBtn(item.id)}>
-                <DeleteForeverIcon />
-              </button>
-              <button className="btn addBtn" onClick={() => editBtn(item.id)}>
-                <RateReviewIcon />
-              </button>
-            </div>
+            {item.isComplete ? (
+              <div className="btnContainer">
+                <button className="listBtn" onClick={() => delBtn(item.id)}>
+                  <DeleteForeverIcon />
+                </button>
+              </div>
+            ) : (
+              <div className="btnContainer">
+                <button className="listBtn" onClick={() => delBtn(item.id)}>
+                  <DeleteForeverIcon />
+                </button>
+                <button className="listBtn addBtn" onClick={() => editBtn(item.id)}>
+                  <RateReviewIcon />
+                </button>
+              </div>
+            )}
           </div>
         ))}
     </ul>
