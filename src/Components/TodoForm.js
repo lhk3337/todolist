@@ -18,7 +18,7 @@ const Todo = ({ setTodos, todos }) => {
       return;
     }
     const id = Math.floor(Math.random() * 10000) + 1;
-    setTodos([...todos, { id, data: input, isComplete: false }]);
+    setTodos([...todos, { id, data: input, isComplete: true }]);
     setInput("");
     inputRefFocus();
   };
