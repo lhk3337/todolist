@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import "./App.css";
+import "./style/App.css";
 import TodoForm from "./Components/TodoForm";
+import TodoHeader from "./Components/TodoHeader";
 import TodoList from "./Components/TodoList";
 function App() {
   const [todos, setTodos] = useState([]);
+
   return (
     <div className="app">
-      <h1>오늘은 무엇을 할까?</h1>
+      <TodoHeader todos={todos} />
       <TodoForm todos={todos} setTodos={setTodos} />
       <TodoList todos={todos} setTodos={setTodos} />
     </div>

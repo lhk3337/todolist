@@ -1,0 +1,38 @@
+.header {
+  width: 90%;
+  height: 80px;
+  padding: 50px 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background-color: #f71d83;
+  display: flex;
+  border-radius: 0.4rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.dateContainer {
+  display: flex;
+  flex-direction: column;
+}
+.dateContainer h1 {
+  font-size: 35px;
+  color: white;
+}
+.dateContainer p {
+  margin-top: 0.4rem;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(218, 218, 218);
+}
+
+.todoCount {
+  display: flex;
+  flex-direction: column;
+}
+.todoCount span {
+  font-weight: bold;
+  color: rgb(218, 218, 218);
+  margin-top: 10px;
+  margin-right: 5px;
+  font-size: 15px;
+}
