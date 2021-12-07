@@ -70,8 +70,8 @@ const TodoList = ({ todos, setTodos }) => {
                 style={{
                   color: "#f71d83",
                 }}
-                icon={<CircleOutlinedIcon />}
-                checkedIcon={<CheckCircleIcon />}
+                icon={<CircleOutlinedIcon sx={{ fontSize: 25 }} />}
+                checkedIcon={<CheckCircleIcon sx={{ fontSize: 25 }} />}
                 onClick={() => completeBtn(item.id)}
               />
               {item.isEdit ? (
@@ -89,14 +89,14 @@ const TodoList = ({ todos, setTodos }) => {
               )}
             </li>
             <div className="btnContainer">
-              <button className="listBtn" onClick={() => delBtn(item.id)}>
-                <DeleteForeverIcon />
-              </button>
               {item.isComplete ? (
                 <button className="listBtn addBtn" onClick={() => editBtn(item.id)}>
-                  <RateReviewIcon />
+                  <RateReviewIcon sx={{ fontSize: 25 }} />
                 </button>
               ) : null}
+              <button className={`listBtn ${item.isComplete ? "" : "moveBtn"}`} onClick={() => delBtn(item.id)}>
+                <DeleteForeverIcon sx={{ fontSize: 30 }} />
+              </button>
             </div>
           </div>
         ))}
