@@ -1,4 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
+
+import IconButton from "@mui/material/IconButton";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+
 const Todo = ({ setTodos, todos }) => {
   const [input, setInput] = useState("");
   const inputRef = useRef(null);
@@ -32,18 +36,17 @@ const Todo = ({ setTodos, todos }) => {
   }, []);
 
   return (
-    <div>
+    <div className="FormContainer">
       <form onSubmit={onSubmit}>
-        <input
-          className="todoinput"
-          value={input}
-          onChange={onChange}
-          ref={inputRef}
-          placeholder="할 일을 입력해 주세요..."
-        />
-        <button type="submit" className="todoBtn" onClick={onClickBtn}>
-          할일 추가
-        </button>
+        <input className="todoinput" value={input} onChange={onChange} ref={inputRef} placeholder="Add Todo" />
+        <IconButton type="submit" size="small" onClick={onClickBtn}>
+          <AddCircleIcon
+            style={{
+              color: "#f71d83",
+            }}
+            sx={{ fontSize: 50 }}
+          />
+        </IconButton>
       </form>
     </div>
   );
