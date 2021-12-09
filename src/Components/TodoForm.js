@@ -39,7 +39,7 @@ const Todo = ({ setTodos, todos }) => {
     <div className="FormContainer">
       <form onSubmit={onSubmit}>
         <input className="todoinput" value={input} onChange={onChange} ref={inputRef} placeholder="Add Todo" />
-        <IconButton type="submit" size="small" onClick={onClickBtn}>
+        <IconButton type="submit" size="small" style={{ padding: 0 }} onClick={onClickBtn}>
           <AddCircleIcon
             style={{
               color: "#f71d83",
