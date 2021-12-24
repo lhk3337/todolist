@@ -1,16 +1,25 @@
 const express = require("express");
 const cors = require("cors");
-
+const mongoose = require("mongoose");
+require("dotenv").config();
 const app = express();
-
-const port = 5000;
 
 app.use(cors());
 app.use(express.json());
+const port = process.env.port || 5000;
 
-app.get("/", (req, res) => {
-  res.send("Todo Server open");
+const mongoDBURI = process.env.MONGGOURI;
+
+mongoose.connect(mongoDBURI, { useUnifiedTopology: true });
+
+const connection = mongoose.connection;
+connection.once("open", () => {
+  console.log("MongoDB connection established successfuly");
 });
+
+const todoRouter = require("./Todo");
+
+app.use("/todo", todoRouter);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
