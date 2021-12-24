@@ -2,7 +2,5 @@
 
 ## 만들면서 배울 점
 
-- [ ] input, button등을 이용하여 react 환경에서 DOM처리법
-- [ ] hooks를 이용하여 input에서 입력한 데이터 나타내기
-- [ ] to do list에서 추가, 삭제, 수정을 코드로 어떻게 나타내야 하는지 알고리즘 생각하기
-- [ ] etc
+- [ ] node를 이용하여 CRUD 설정 + mongoDB 연결
+- [ ] react의 axios를 이용하여 node.js REST API를 이용하여 To do CURD 컨트롤
